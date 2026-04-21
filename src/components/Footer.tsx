@@ -13,6 +13,7 @@ export default function Footer() {
               <a href="/blog/posts" className="hover:text-white">記事一覧</a>
               <a href="/blog/tools" className="hover:text-white">無料ツール</a>
               <a href="/blog/about" className="hover:text-white">プロフィール</a>
+              <a href="/blog/privacy" className="hover:text-white">プライバシーポリシー</a>
             </div>
             <div className="flex flex-col gap-2">
               <p className="font-bold text-white">SNS</p>
