@@ -2,10 +2,16 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: '無料ツール',
-  description: 'フリーランスSE向け無料ツール一覧。SE単価シミュレーター、CLAUDE.mdジェネレーターなど。',
+  description: 'フリーランスSE向け無料ツール一覧。SE単価シミュレーター、CLAUDE.mdジェネレーター、技術スタック診断ツールなど。',
 }
 
 const tools = [
+  {
+    name: 'SE向け技術スタック診断ツール',
+    url: 'https://ch-ragge.github.io/tech-stack-advisor/',
+    desc: '5問に答えるだけで、あなたのプロジェクトに最適な技術スタックを診断。規模・目的・チーム・優先度・経験から8種の候補を自動採点。理由付きでトップ3を表示。',
+    tag: '技術選定',
+  },
   {
     name: 'SE単価シミュレーター',
     url: 'https://ch-ragge.github.io/se-rate-simulator/',
