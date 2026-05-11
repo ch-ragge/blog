@@ -14,6 +14,7 @@ export default function Header() {
           <Link href="/posts" className="hover:text-white transition-colors">記事</Link>
           <Link href="/tools" className="hover:text-white transition-colors">ツール</Link>
           <Link href="/about" className="hover:text-white transition-colors">プロフィール</Link>
+          <Link href="/contact" className="hover:text-white transition-colors">お問い合わせ</Link>
           <a
             href="https://note.com/ch_ragga"
             target="_blank"
