@@ -15,8 +15,8 @@ export default function Home() {
             フリーランスSE × AIツール × Claude Code
           </p>
           <h1 className="hero-title hero-item-1 text-ink">
-            <span className="hero-phrase">現場で使えるノウハウを、</span>
-            <span className="hero-phrase">そのまま公開する。</span>
+            <span className="hero-phrase">現場で使えるノウハウ</span>
+            <span className="hero-phrase">そのまま公開</span>
           </h1>
           <p className="hero-item-2 mx-auto mt-8 max-w-xl text-[1.0625rem] leading-relaxed text-subtle">
             元自衛隊・フリーランスSE13年目。Claude Codeで作った無料ツールやAI活用術、上流案件の取り方まで全部書きます。

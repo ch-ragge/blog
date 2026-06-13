@@ -25,15 +25,15 @@ body {
 
 /* ヒーロー見出し */
 .hero-title {
-  font-size: clamp(2.5rem, 7vw, 5.5rem);
+  font-size: clamp(1.5rem, 8vw, 4.5rem);
   font-weight: 700;
   letter-spacing: -0.02em;
-  line-height: 1.12;
-  text-wrap: balance;
+  line-height: 1.15;
 }
-/* 日本語見出しのフレーズ単位折り返し（句読点の孤立を防ぐ） */
+/* 各フレーズを1行ずつ・行内では折り返さない（公／開のような語中改行を防ぐ） */
 .hero-phrase {
-  display: inline-block;
+  display: block;
+  white-space: nowrap;
 }
 
 /* キーボードフォーカスリング */
