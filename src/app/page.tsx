@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { getAllPosts } from '@/lib/posts'
 import ArticleCard from '@/components/ArticleCard'
+import Reveal from '@/components/Reveal'
 
 export default function Home() {
   const posts = getAllPosts().slice(0, 3)
@@ -8,32 +9,33 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section style={{ background: '#1A1A2E' }} className="text-white py-16 px-4">
-        <div className="max-w-3xl mx-auto text-center">
-          <p className="text-sm font-bold mb-3" style={{ color: '#00B4D8' }}>
+      <section className="bg-base px-6 pt-24 pb-20 sm:pt-32 sm:pb-28">
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="hero-item-1 mb-6 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
             フリーランスSE × AIツール × Claude Code
           </p>
-          <h1 className="text-3xl md:text-4xl font-black leading-tight mb-4">
-            現場で使えるノウハウを、<br />そのまま公開する。
+          <h1 className="hero-title hero-item-1 text-ink">
+            現場で使えるノウハウを、
+            <br />
+            そのまま公開する。
           </h1>
-          <p className="text-gray-300 text-base leading-relaxed mb-8">
-            元自衛隊・フリーランスSE13年目。<br />
-            Claude Codeで作った無料ツールやAI活用術、<br />
+          <p className="hero-item-2 mx-auto mt-8 max-w-xl text-[1.0625rem] leading-relaxed text-subtle">
+            元自衛隊・フリーランスSE13年目。
+            Claude Codeで作った無料ツールやAI活用術、
             上流案件の取り方まで全部書きます。
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+          <div className="hero-item-3 mt-12 flex flex-col items-center justify-center gap-5 sm:flex-row">
             <Link
               href="/posts"
-              className="px-6 py-3 rounded-lg font-bold text-white"
-              style={{ background: '#00B4D8' }}
+              className="rounded-full bg-accent px-8 py-3 font-semibold text-dark transition-[filter] hover:brightness-105"
             >
               記事を読む
             </Link>
             <Link
               href="/tools"
-              className="px-6 py-3 rounded-lg font-bold border border-white text-white hover:bg-white hover:text-[#1A1A2E] transition-colors"
+              className="font-semibold text-accent transition-opacity hover:opacity-80"
             >
-              無料ツールを使う
+              無料ツールを使う →
             </Link>
           </div>
         </div>
@@ -45,82 +47,91 @@ export default function Home() {
       </div> */}
 
       {/* 最新記事 */}
-      <section className="max-w-3xl mx-auto px-4 py-12">
-        <h2 className="text-xl font-black mb-6" style={{ color: '#1A1A2E' }}>
-          最新記事
-        </h2>
-        <div className="flex flex-col gap-4">
-          {posts.map(post => (
-            <ArticleCard key={post.slug} post={post} />
-          ))}
-        </div>
-        <div className="mt-8 text-center">
-          <Link
-            href="/posts"
-            className="inline-block px-6 py-3 rounded-lg font-bold text-white"
-            style={{ background: '#1A1A2E' }}
-          >
-            記事をすべて見る →
-          </Link>
-        </div>
-      </section>
-
-      {/* 無料ツール */}
-      <section className="py-12 px-4" style={{ background: '#f0fbff' }}>
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-xl font-black mb-6" style={{ color: '#1A1A2E' }}>
-            無料ツール
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <a
-              href="https://ch-ragge.github.io/se-rate-simulator/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block p-5 bg-white rounded-xl border-2 hover:shadow-md transition-shadow"
-              style={{ borderColor: '#00B4D8' }}
+      <section className="bg-surface px-6 py-24 sm:py-32">
+        <div className="mx-auto max-w-3xl">
+          <Reveal>
+            <h2 className="mb-10 text-3xl font-bold tracking-tight text-ink">最新記事</h2>
+          </Reveal>
+          <div className="flex flex-col gap-4">
+            {posts.map((post, i) => (
+              <Reveal key={post.slug} delay={i * 80}>
+                <ArticleCard post={post} />
+              </Reveal>
+            ))}
+          </div>
+          <div className="mt-12 text-center">
+            <Link
+              href="/posts"
+              className="inline-block rounded-full border border-ink/15 px-8 py-3 font-semibold text-ink transition-colors hover:bg-ink/5"
             >
-              <p className="text-xs font-bold mb-1" style={{ color: '#00B4D8' }}>FREE TOOL</p>
-              <h3 className="font-black text-base mb-2" style={{ color: '#1A1A2E' }}>
-                SE単価シミュレーター
-              </h3>
-              <p className="text-sm text-gray-600">
-                スキルと経験を入力するだけで市場単価の目安を算出。単価アップのアドバイス付き。
-              </p>
-            </a>
-            <a
-              href="https://ch-ragge.github.io/claudemd-generator/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block p-5 bg-white rounded-xl border-2 hover:shadow-md transition-shadow"
-              style={{ borderColor: '#00B4D8' }}
-            >
-              <p className="text-xs font-bold mb-1" style={{ color: '#00B4D8' }}>FREE TOOL</p>
-              <h3 className="font-black text-base mb-2" style={{ color: '#1A1A2E' }}>
-                CLAUDE.mdジェネレーター
-              </h3>
-              <p className="text-sm text-gray-600">
-                4ステップでCLAUDE.mdを自動生成。Claude Codeをすぐに使い始められる。
-              </p>
-            </a>
+              記事をすべて見る →
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* note誘導 */}
-      <section className="py-12 px-4">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-xl font-black mb-3" style={{ color: '#1A1A2E' }}>
-            深掘りはnoteで
-          </h2>
-          <p className="text-gray-600 text-sm mb-6">
+      {/* 無料ツール */}
+      <section className="bg-base px-6 py-24 sm:py-32">
+        <div className="mx-auto max-w-4xl">
+          <Reveal>
+            <h2 className="mb-10 text-3xl font-bold tracking-tight text-ink">無料ツール</h2>
+          </Reveal>
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+            <Reveal>
+              <a
+                href="https://ch-ragge.github.io/se-rate-simulator/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block h-full rounded-3xl bg-surface p-8 transition-transform duration-300 hover:scale-[1.02]"
+              >
+                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-subtle">
+                  Free Tool
+                </p>
+                <h3 className="mb-3 text-xl font-bold tracking-tight text-ink">
+                  SE単価シミュレーター
+                </h3>
+                <p className="text-sm leading-relaxed text-subtle">
+                  スキルと経験を入力するだけで市場単価の目安を算出。単価アップのアドバイス付き。
+                </p>
+              </a>
+            </Reveal>
+            <Reveal delay={80}>
+              <a
+                href="https://ch-ragge.github.io/claudemd-generator/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block h-full rounded-3xl bg-surface p-8 transition-transform duration-300 hover:scale-[1.02]"
+              >
+                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-subtle">
+                  Free Tool
+                </p>
+                <h3 className="mb-3 text-xl font-bold tracking-tight text-ink">
+                  CLAUDE.mdジェネレーター
+                </h3>
+                <p className="text-sm leading-relaxed text-subtle">
+                  4ステップでCLAUDE.mdを自動生成。Claude Codeをすぐに使い始められる。
+                </p>
+              </a>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* note誘導（ダークセクション） */}
+      <section className="bg-dark px-6 py-24">
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+            Premium
+          </p>
+          <h2 className="mb-4 text-3xl font-bold tracking-tight text-white">深掘りはnoteで</h2>
+          <p className="mx-auto mb-10 max-w-lg text-sm leading-relaxed text-gray-300">
             ブログには書ききれない実体験・ノウハウ・設計書の書き方は有料記事で公開中。
           </p>
           <a
             href="https://note.com/ch_ragga"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block px-6 py-3 rounded-lg font-bold text-white"
-            style={{ background: '#00B4D8' }}
+            className="inline-block rounded-full bg-accent px-8 py-3 font-semibold text-dark transition-[filter] hover:brightness-105"
           >
             noteを見る →
           </a>

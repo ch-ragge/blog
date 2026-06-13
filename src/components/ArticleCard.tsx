@@ -5,24 +5,23 @@ export default function ArticleCard({ post }: { post: PostMeta }) {
   return (
     <Link
       href={`/posts/${post.slug}`}
-      className="block p-5 bg-white rounded-xl border border-gray-200 hover:shadow-md hover:border-[#00B4D8] transition-all"
+      className="block rounded-3xl bg-base p-6 transition-shadow duration-300 hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)]"
     >
-      <div className="flex flex-wrap gap-2 mb-2">
+      <div className="mb-3 flex flex-wrap gap-2">
         {post.tags.map(tag => (
           <span
             key={tag}
-            className="text-xs font-bold px-2 py-0.5 rounded text-white"
-            style={{ background: '#00B4D8' }}
+            className="rounded-full bg-accent/10 px-2.5 py-0.5 text-xs font-semibold text-accent"
           >
             {tag}
           </span>
         ))}
       </div>
-      <h2 className="font-black text-base mb-1 leading-snug" style={{ color: '#1A1A2E' }}>
+      <h2 className="mb-2 text-xl font-bold leading-snug tracking-tight text-ink">
         {post.title}
       </h2>
-      <p className="text-sm text-gray-500 leading-relaxed line-clamp-2">{post.excerpt}</p>
-      <p className="text-xs text-gray-400 mt-2">{post.date}</p>
+      <p className="line-clamp-2 text-sm leading-relaxed text-subtle">{post.excerpt}</p>
+      <p className="mt-3 text-xs text-subtle">{post.date}</p>
     </Link>
   )
 }

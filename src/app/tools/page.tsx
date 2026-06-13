@@ -1,8 +1,10 @@
 import type { Metadata } from 'next'
+import Reveal from '@/components/Reveal'
 
 export const metadata: Metadata = {
   title: '無料ツール',
   description: 'フリーランスSE向け無料ツール一覧。SE単価シミュレーター、CLAUDE.mdジェネレーター、技術スタック診断ツールなど。',
+  alternates: { canonical: 'https://ch-ragge.github.io/blog/tools/' },
 }
 
 const tools = [
@@ -28,37 +30,32 @@ const tools = [
 
 export default function ToolsPage() {
   return (
-    <div className="max-w-3xl mx-auto px-4 py-12">
-      <h1 className="text-2xl font-black mb-2" style={{ color: '#1A1A2E' }}>
-        無料ツール
-      </h1>
-      <p className="text-gray-500 text-sm mb-8">
+    <div className="mx-auto max-w-3xl px-6 py-20 sm:py-24">
+      <h1 className="text-4xl font-bold tracking-tight text-ink">無料ツール</h1>
+      <p className="mt-3 mb-12 text-sm text-subtle">
         Claude Codeで作った無料ツール。すべてブラウザで動きます。
       </p>
       <div className="flex flex-col gap-6">
-        {tools.map(tool => (
-          <a
-            key={tool.name}
-            href={tool.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block p-6 bg-white rounded-xl border-2 hover:shadow-lg transition-shadow"
-            style={{ borderColor: '#00B4D8' }}
-          >
-            <div className="flex items-center gap-3 mb-3">
-              <span
-                className="text-xs font-bold px-2 py-1 rounded text-white"
-                style={{ background: '#00B4D8' }}
-              >
-                {tool.tag}
-              </span>
-              <span className="text-xs text-gray-400">無料</span>
-            </div>
-            <h2 className="text-lg font-black mb-2" style={{ color: '#1A1A2E' }}>
-              {tool.name} →
-            </h2>
-            <p className="text-sm text-gray-600 leading-relaxed">{tool.desc}</p>
-          </a>
+        {tools.map((tool, i) => (
+          <Reveal key={tool.name} delay={i * 60}>
+            <a
+              href={tool.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block rounded-3xl bg-surface p-8 transition-transform duration-300 hover:scale-[1.02]"
+            >
+              <div className="mb-3 flex items-center gap-3">
+                <span className="rounded-full bg-accent/10 px-2.5 py-0.5 text-xs font-semibold text-accent">
+                  {tool.tag}
+                </span>
+                <span className="text-xs text-subtle">無料</span>
+              </div>
+              <h2 className="mb-2 text-xl font-bold tracking-tight text-ink">
+                {tool.name} →
+              </h2>
+              <p className="text-sm leading-relaxed text-subtle">{tool.desc}</p>
+            </a>
+          </Reveal>
         ))}
       </div>
     </div>

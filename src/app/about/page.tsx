@@ -2,19 +2,20 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'プロフィール',
-  description: 'らがSEのプロフィール。元自衛隊・フリーランスSE13年目。AIツールとClaude Codeを活用した副業・情報発信を実践中。',
+  description: 'らがSEのプロフィール。元自衛隊のフリーランスSE。AIツールとClaude Codeを活用した副業・情報発信を実践中。',
+  alternates: { canonical: 'https://ch-ragge.github.io/blog/about/' },
 }
 
 export default function AboutPage() {
   return (
-    <div className="max-w-2xl mx-auto px-4 py-12">
-      <h1 className="text-2xl font-black mb-8" style={{ color: '#1A1A2E' }}>
+    <div className="mx-auto max-w-2xl px-6 py-20 sm:py-24">
+      <h1 className="mb-8 text-4xl font-bold tracking-tight text-ink">
         プロフィール
       </h1>
 
-      <div className="p-6 rounded-xl mb-8" style={{ background: '#1A1A2E' }}>
-        <p className="text-2xl font-black text-white mb-1">らがSE</p>
-        <p className="text-sm" style={{ color: '#00B4D8' }}>
+      <div className="mb-10 rounded-3xl bg-dark p-8">
+        <p className="mb-1 text-2xl font-bold text-white">らがSE</p>
+        <p className="text-sm text-accent">
           元自衛隊 × フリーランスSE × AIツール活用
         </p>
       </div>
