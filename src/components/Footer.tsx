@@ -10,10 +10,10 @@ export default function Footer() {
           <div className="flex gap-10 text-xs">
             <div className="flex flex-col gap-2">
               <p className="font-semibold text-ink">コンテンツ</p>
-              <a href="/blog/posts" className="hover:text-ink">記事一覧</a>
-              <a href="/blog/tools" className="hover:text-ink">無料ツール</a>
-              <a href="/blog/about" className="hover:text-ink">プロフィール</a>
-              <a href="/blog/privacy" className="hover:text-ink">プライバシーポリシー</a>
+              <a href="/blog/posts/" className="hover:text-ink">記事一覧</a>
+              <a href="/blog/tools/" className="hover:text-ink">無料ツール</a>
+              <a href="/blog/about/" className="hover:text-ink">プロフィール</a>
+              <a href="/blog/privacy/" className="hover:text-ink">プライバシーポリシー</a>
             </div>
             <div className="flex flex-col gap-2">
               <p className="font-semibold text-ink">SNS</p>

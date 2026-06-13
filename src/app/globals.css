@@ -3,7 +3,7 @@
 @theme {
   --color-base: #ffffff;
   --color-ink: #1d1d1f;
-  --color-subtle: #86868b;
+  --color-subtle: #6e6e73;
   --color-surface: #f5f5f7;
   --color-accent: #00b4d8;
   --color-dark: #1a1a2e;
@@ -28,7 +28,12 @@ body {
   font-size: clamp(2.5rem, 7vw, 5.5rem);
   font-weight: 700;
   letter-spacing: -0.02em;
-  line-height: 1.08;
+  line-height: 1.12;
+  text-wrap: balance;
+}
+/* 日本語見出しのフレーズ単位折り返し（句読点の孤立を防ぐ） */
+.hero-phrase {
+  display: inline-block;
 }
 
 /* キーボードフォーカスリング */

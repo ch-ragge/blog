@@ -21,7 +21,7 @@ export default function PostsPage() {
       <div className="flex flex-col gap-4">
         {posts.map((post, i) => (
           <Reveal key={post.slug} delay={i * 60}>
-            <ArticleCard post={post} />
+            <ArticleCard post={post} headingLevel="h2" />
           </Reveal>
         ))}
       </div>

@@ -15,14 +15,11 @@ export default function Home() {
             フリーランスSE × AIツール × Claude Code
           </p>
           <h1 className="hero-title hero-item-1 text-ink">
-            現場で使えるノウハウを、
-            <br />
-            そのまま公開する。
+            <span className="hero-phrase">現場で使えるノウハウを、</span>
+            <span className="hero-phrase">そのまま公開する。</span>
           </h1>
           <p className="hero-item-2 mx-auto mt-8 max-w-xl text-[1.0625rem] leading-relaxed text-subtle">
-            元自衛隊・フリーランスSE13年目。
-            Claude Codeで作った無料ツールやAI活用術、
-            上流案件の取り方まで全部書きます。
+            元自衛隊・フリーランスSE13年目。Claude Codeで作った無料ツールやAI活用術、上流案件の取り方まで全部書きます。
           </p>
           <div className="hero-item-3 mt-12 flex flex-col items-center justify-center gap-5 sm:flex-row">
             <Link
@@ -76,8 +73,26 @@ export default function Home() {
           <Reveal>
             <h2 className="mb-10 text-3xl font-bold tracking-tight text-ink">無料ツール</h2>
           </Reveal>
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
             <Reveal>
+              <a
+                href="https://ch-ragge.github.io/tech-stack-advisor/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block h-full rounded-3xl bg-surface p-8 transition-transform duration-300 hover:scale-[1.02]"
+              >
+                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-subtle">
+                  Free Tool
+                </p>
+                <h3 className="mb-3 text-xl font-bold tracking-tight text-ink">
+                  技術スタック診断
+                </h3>
+                <p className="text-sm leading-relaxed text-subtle">
+                  5問に答えるだけで、プロジェクトに最適な技術スタックを診断。理由付きでトップ3を提示。
+                </p>
+              </a>
+            </Reveal>
+            <Reveal delay={80}>
               <a
                 href="https://ch-ragge.github.io/se-rate-simulator/"
                 target="_blank"
@@ -95,7 +110,7 @@ export default function Home() {
                 </p>
               </a>
             </Reveal>
-            <Reveal delay={80}>
+            <Reveal delay={160}>
               <a
                 href="https://ch-ragge.github.io/claudemd-generator/"
                 target="_blank"
